@@ -39,12 +39,29 @@
 
 			<!-- Banner -->
 				<section id="banner">
-					<h3>Welcome</h3>
-					<p>欢迎来到Eric Pan s' Blog</p>
+
+					<!---格言api start-->
+					<h3 id="hitokoto"></h3>
+						<script>
+ 						 var xhr = new XMLHttpRequest();
+ 						 xhr.open('get', 'https://v1.hitokoto.cn');
+ 						 xhr.onreadystatechange = function () {
+ 						   if (xhr.readyState === 4) {
+  						    var data = JSON.parse(xhr.responseText);
+  						    var hitokoto = document.getElementById('hitokoto');
+  						    hitokoto.innerText = data.hitokoto;
+ 						   }
+ 						 }
+ 						 xhr.send();
+					</script>
+					<!---格言api end-->
+
+					<!--- 原版banner start
 					<ul class="actions special">
 						<li><a href="#" class="button primary">Sign Up</a></li>
 						<li><a href="#" class="button">Learn More</a></li>
 					</ul>
+					-->
 				</section>
 
 			<!-- Main -->
